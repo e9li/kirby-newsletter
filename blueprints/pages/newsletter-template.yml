@@ -1,0 +1,183 @@
+title: e9li.newsletter.template.title
+icon: palette
+
+options:
+  changeTemplate: false
+
+tabs:
+  design:
+    label: e9li.newsletter.template.design
+    icon: palette
+    columns:
+      - width: 1/2
+        fields:
+          newsletterBrand:
+            label: e9li.newsletter.template.brand
+            type: color
+            translate: false
+            default: "#1d4ed8"
+
+          newsletterLink:
+            label: e9li.newsletter.template.link
+            type: color
+            translate: false
+            default: "#1d4ed8"
+
+          newsletterPage:
+            label: e9li.newsletter.template.pageBackground
+            type: color
+            translate: false
+            default: "#f4f4f5"
+
+          newsletterCard:
+            label: e9li.newsletter.template.cardBackground
+            type: color
+            translate: false
+            default: "#ffffff"
+
+          newsletterText:
+            label: e9li.newsletter.template.textColor
+            type: color
+            translate: false
+            default: "#18181b"
+
+          newsletterMuted:
+            label: e9li.newsletter.template.mutedColor
+            type: color
+            translate: false
+            default: "#71717a"
+
+          newsletterButton:
+            label: e9li.newsletter.template.buttonBackground
+            type: color
+            translate: false
+            default: "#1d4ed8"
+
+          newsletterButtonText:
+            label: e9li.newsletter.template.buttonText
+            type: color
+            translate: false
+            default: "#ffffff"
+
+          newsletterContentWidth:
+            label: e9li.newsletter.template.width
+            type: number
+            translate: false
+            default: 600
+            min: 480
+            max: 700
+            step: 20
+            after: px
+
+          newsletterFont:
+            label: e9li.newsletter.template.font
+            type: select
+            translate: false
+            default: system
+            options:
+              system: e9li.newsletter.template.fontSystem
+              arial: e9li.newsletter.template.fontArial
+              georgia: e9li.newsletter.template.fontGeorgia
+
+      - width: 1/2
+        fields:
+          newsletterLogo:
+            label: e9li.newsletter.template.logo
+            type: files
+            max: 1
+            translate: false
+            query: site.images
+            uploads:
+              accept: image/png, image/jpeg
+
+          newsletterLogoDark:
+            label: e9li.newsletter.template.logoDark
+            type: files
+            max: 1
+            translate: false
+            query: site.images
+            uploads:
+              accept: image/png, image/jpeg
+
+          newsletterLogoAlign:
+            label: e9li.newsletter.template.logoAlign
+            type: select
+            translate: false
+            default: left
+            options:
+              left: e9li.newsletter.template.alignLeft
+              center: e9li.newsletter.template.alignCenter
+
+          newsletterHeaderLine:
+            label: e9li.newsletter.template.headerLine
+            type: writer
+            inline: true
+            marks:
+              - bold
+              - italic
+
+          newsletterHeaderImage:
+            label: e9li.newsletter.template.headerImage
+            type: files
+            max: 1
+            translate: false
+            query: site.images
+            uploads:
+              accept: image/png, image/jpeg
+
+          newsletterSocial:
+            label: e9li.newsletter.template.social
+            type: structure
+            translate: false
+            max: 4
+            fields:
+              label:
+                label: e9li.newsletter.template.socialLabel
+                type: text
+                required: true
+              url:
+                label: e9li.newsletter.template.socialUrl
+                type: url
+                required: true
+
+  footer:
+    label: e9li.newsletter.template.footer
+    icon: text
+    fields:
+      newsletterLegalInfo:
+        type: info
+        theme: notice
+        label: e9li.newsletter.template.legal
+        text: e9li.newsletter.template.legalInfo
+
+      newsletterLegalName:
+        label: e9li.newsletter.template.legalName
+        type: text
+        required: true
+        translate: false
+
+      newsletterAddress:
+        label: e9li.newsletter.template.address
+        type: textarea
+        required: true
+        buttons: false
+        size: small
+
+      newsletterFooterText:
+        label: e9li.newsletter.template.footerText
+        type: textarea
+        buttons:
+          - bold
+          - italic
+          - link
+        size: small
+
+      newsletterPrivacyUrl:
+        label: e9li.newsletter.template.privacy
+        type: url
+        width: 1/2
+
+      newsletterImprintUrl:
+        label: e9li.newsletter.template.imprint
+        type: url
+        width: 1/2

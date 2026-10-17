@@ -1,0 +1,26 @@
+title: e9li.newsletter.label
+icon: email
+
+options:
+  changeTemplate: false
+  changeSlug: false
+
+sections:
+  intro:
+    type: info
+    label: e9li.newsletter.label
+    text: >
+      This page holds the newsletter structure. Lists live under "Lists";
+      campaigns and themes are added in later versions of the plugin.
+
+  children:
+    type: pages
+    label: Sections
+    templates:
+      - newsletter-campaigns
+      - newsletter-lists
+      - newsletter-templates
+    create:
+      - newsletter-campaigns
+      - newsletter-lists
+      - newsletter-templates

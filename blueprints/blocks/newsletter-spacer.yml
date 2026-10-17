@@ -1,0 +1,13 @@
+name: e9li.newsletter.block.spacer
+icon: expand-up-down
+preview: fields
+fields:
+  size:
+    label: e9li.newsletter.block.size
+    type: select
+    default: m
+    options:
+      none: e9li.newsletter.block.none
+      s: e9li.newsletter.block.small
+      m: e9li.newsletter.block.medium
+      l: e9li.newsletter.block.large

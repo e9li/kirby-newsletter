@@ -1,0 +1,134 @@
+title: e9li.newsletter.campaign.title
+icon: megaphone
+
+options:
+  changeTemplate: false
+
+status:
+  draft:
+    label: Draft
+    text: Not ready to send
+  unlisted:
+    label: Ready
+    text: Reviewed and ready to send
+  listed:
+    label: Sent
+    text: Has been sent
+
+tabs:
+  layout:
+    label: e9li.newsletter.campaign.layout
+    icon: layers
+    fields:
+      newsletterBody:
+        # `label: false` does not hide it — Kirby falls back to the humanised
+        # field name ("Newsletterbody"), so give it a real one.
+        label: e9li.newsletter.campaign.layout
+        type: layout
+        # A 12-column grid mapped to email-safe rows. More than three columns
+        # is unreadable below 600px, so those arrangements are not offered.
+        layouts:
+          - "1/1"
+          - "1/2, 1/2"
+          - "1/3, 2/3"
+          - "2/3, 1/3"
+          - "1/3, 1/3, 1/3"
+        fieldsets:
+          - heading
+          - text
+          - image
+          - list
+          - quote
+          - line
+          - newsletter-button
+          - newsletter-spacer
+        settings:
+          fields:
+            background:
+              label: e9li.newsletter.campaign.background
+              type: select
+              default: canvas
+              options:
+                canvas: e9li.newsletter.campaign.canvas
+                page: e9li.newsletter.campaign.page
+                muted: e9li.newsletter.campaign.muted
+                brand: e9li.newsletter.campaign.brand
+                dark: e9li.newsletter.campaign.dark
+            fullWidth:
+              label: e9li.newsletter.campaign.fullWidth
+              type: toggle
+              default: false
+            paddingY:
+              label: e9li.newsletter.campaign.padding
+              type: select
+              default: m
+              options:
+                none: e9li.newsletter.layout.none
+                s: e9li.newsletter.layout.small
+                m: e9li.newsletter.layout.medium
+                l: e9li.newsletter.layout.large
+            hideOnMobile:
+              label: e9li.newsletter.campaign.hideMobile
+              type: toggle
+              default: false
+
+  settings:
+    label: e9li.newsletter.campaign.settings
+    icon: cog
+    columns:
+      # Left: what the recipient sees in their inbox before opening anything.
+      - width: 1/2
+        fields:
+          newsletterSubject:
+            label: e9li.newsletter.campaign.subject
+            type: text
+            required: true
+            maxlength: 120
+            counter: true
+            help: >
+              Aim for under 60 characters. Mobile clients show roughly 35.
+
+          newsletterPreheader:
+            label: e9li.newsletter.campaign.preheader
+            type: text
+            maxlength: 120
+            counter: true
+            help: >
+              The preview line shown after the subject in the inbox. Leaving it
+              empty means the client pulls in whatever your first line of copy is.
+
+      # Right: who it goes to and what it looks like.
+      - width: 1/2
+        fields:
+          newsletterLists:
+            label: e9li.newsletter.form.lists
+            type: pages
+            multiple: true
+            required: true
+            # Not translated: the same lists receive every language of a campaign.
+            translate: false
+            query: kirby.page("newsletter/lists").children.listed
+
+          newsletterTemplate:
+            label: e9li.newsletter.campaign.template
+            type: pages
+            max: 1
+            translate: false
+            query: kirby.page("newsletter/templates").children
+
+  send:
+    label: e9li.newsletter.campaign.send
+    icon: plane
+    fields:
+      newsletterSendInfo:
+        type: info
+        theme: info
+        label: e9li.newsletter.campaign.send
+        text: e9li.newsletter.campaign.sendHint
+
+      newsletterTestRecipients:
+        label: e9li.newsletter.campaign.testRecipients
+        type: tags
+        translate: false
+        icon: email
+        help: e9li.newsletter.campaign.testRecipientsHelp

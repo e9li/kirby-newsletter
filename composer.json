@@ -1,0 +1,44 @@
+{
+    "name": "e9li/kirby-newsletter",
+    "description": "Newsletter system for Kirby: lists, double opt-in, layout-field composition, email rendering and throttled bulk sending",
+    "type": "kirby-plugin",
+    "license": "MIT",
+    "version": "0.4.0",
+    "authors": [
+        {
+            "name": "Rafael Egli",
+            "email": "rafael@e9li.com",
+            "homepage": "https://www.e9li.com"
+        }
+    ],
+    "support": {
+        "docs": "https://github.com/e9li/kirby-newsletter/blob/main/README.md",
+        "source": "https://github.com/e9li/kirby-newsletter",
+        "issues": "https://github.com/e9li/kirby-newsletter/issues"
+    },
+    "keywords": [
+        "kirby",
+        "kirby-cms",
+        "kirby-plugin",
+        "newsletter",
+        "email",
+        "mailing-list"
+    ],
+    "config": {
+        "optimize-autoloader": true,
+        "allow-plugins": {
+            "getkirby/composer-installer": true
+        }
+    },
+    "require": {
+        "php": "~8.2.0 || ~8.3.0 || ~8.4.0 || ~8.5.0",
+        "ext-pdo": "*",
+        "ext-pdo_sqlite": "*",
+        "ext-dom": "*",
+        "ext-mbstring": "*",
+        "getkirby/composer-installer": "^1.2"
+    },
+    "extra": {
+        "installer-name": "newsletter"
+    }
+}

@@ -1,0 +1,93 @@
+title: e9li.newsletter.list.title
+icon: users
+
+options:
+  changeTemplate: false
+
+status:
+  draft:
+    label: Draft
+    text: Not yet available on subscribe forms
+  listed:
+    label: Active
+    text: Available for campaigns and forms
+
+tabs:
+  content:
+    label: e9li.newsletter.list.title
+    icon: users
+    columns:
+      - width: 2/3
+        fields:
+          newsletterDescription:
+            label: e9li.newsletter.list.description
+            type: textarea
+            size: small
+            buttons: false
+            help: Shown next to the checkbox on subscribe forms and in the preference centre.
+
+          newsletterReason:
+            label: e9li.newsletter.list.reason
+            type: text
+            help: e9li.newsletter.send.noReason
+
+          newsletterConsent:
+            label: e9li.newsletter.list.consent
+            type: textarea
+            buttons: false
+            size: small
+
+      - width: 1/3
+        fields:
+          newsletterPublic:
+            label: e9li.newsletter.list.public
+            type: toggle
+            default: false
+            # Not translated: whether a list is public is a property of the
+            # list itself, not of a language version.
+            translate: false
+
+          newsletterOptin:
+            label: e9li.newsletter.list.optin
+            type: toggle
+            default: true
+            translate: false
+            help: e9li.newsletter.list.optinHelp
+
+          newsletterLanguage:
+            label: e9li.newsletter.list.language
+            type: text
+            translate: false
+            width: 1/1
+            help: >
+              Used when a subscriber has no language of their own. Leave empty
+              to fall back to the site default.
+
+  settings:
+    label: Sender
+    icon: email
+    fields:
+      newsletterInfo:
+        type: info
+        label: Sender overrides
+        text: >
+          Leave these empty to use the plugin defaults. Any address you set here
+          must still be on the configured sending domain, or DMARC alignment
+          will fail and the mail will be treated as spoofed.
+
+      newsletterFromName:
+        label: e9li.newsletter.list.fromName
+        type: text
+        width: 1/2
+
+      newsletterFromEmail:
+        label: e9li.newsletter.list.fromEmail
+        type: email
+        width: 1/2
+        translate: false
+
+      newsletterReplyTo:
+        label: e9li.newsletter.list.replyTo
+        type: email
+        width: 1/2
+        translate: false

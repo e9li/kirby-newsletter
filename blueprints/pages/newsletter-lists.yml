@@ -1,0 +1,21 @@
+title: e9li.newsletter.form.lists
+icon: users
+
+options:
+  changeTemplate: false
+
+sections:
+  lists:
+    type: pages
+    label: e9li.newsletter.form.lists
+    template: newsletter-list
+    create: newsletter-list
+    layout: table
+    empty: No lists yet. Create one to start collecting subscribers.
+    columns:
+      title:
+        label: e9li.newsletter.list.title
+      newsletterPublic:
+        label: e9li.newsletter.list.public
+        type: toggle
+        width: 1/6

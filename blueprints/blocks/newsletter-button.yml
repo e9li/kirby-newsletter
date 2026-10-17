@@ -1,0 +1,27 @@
+name: e9li.newsletter.block.button
+icon: url
+preview: fields
+fields:
+  label:
+    label: e9li.newsletter.block.label
+    type: text
+    required: true
+  linktype:
+    label: e9li.newsletter.block.url
+    type: radio
+    default: url
+    options:
+      url: URL
+      file: e9li.newsletter.block.file
+  url:
+    label: URL
+    type: url
+    when:
+      linktype: url
+  file:
+    label: e9li.newsletter.block.file
+    type: files
+    max: 1
+    uploads: false
+    when:
+      linktype: file

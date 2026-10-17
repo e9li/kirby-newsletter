@@ -1,0 +1,23 @@
+title: e9li.newsletter.label
+icon: megaphone
+
+options:
+  changeTemplate: false
+
+sections:
+  campaigns:
+    type: pages
+    label: e9li.newsletter.label
+    template: newsletter-campaign
+    create: newsletter-campaign
+    layout: table
+    sortBy: modified desc
+    empty: No newsletters yet.
+    columns:
+      title:
+        label: Title
+      newsletterSubject:
+        label: e9li.newsletter.campaign.subject
+      newsletterLists:
+        label: e9li.newsletter.form.lists
+        width: 1/6

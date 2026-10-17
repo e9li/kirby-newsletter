@@ -1,0 +1,14 @@
+title: e9li.newsletter.tab.templates
+icon: template
+
+options:
+  changeTemplate: false
+
+sections:
+  templates:
+    type: pages
+    label: e9li.newsletter.tab.templates
+    template: newsletter-template
+    create: newsletter-template
+    layout: cards
+    empty: No templates yet. A template holds the header, footer, colours and fonts shared by your newsletters.
